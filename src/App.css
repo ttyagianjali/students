@@ -47,3 +47,14 @@
   font-weight: lighter;
 }
 
+.header {
+  font-size: xx-large;
+  color: rgb(167, 165, 165);
+  height: 50px;
+  width: 40px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  
+}
+

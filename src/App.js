@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import {Collapsible} from "./Collapsible"
 import Card from "react-bootstrap/Card";
 import { ListGroupItem } from "react-bootstrap";
 
@@ -63,7 +64,6 @@ class App extends React.Component {
             <ListGroupItem>
               <ol className="ol" key={item.id}>
                 <Card.Img className="img" src={item.pic} />
-
                 <Card.Text className="data text-muted">
                   <Card.Title className="text-dark">
                     {item.firstName} {item.lastName}
@@ -75,6 +75,11 @@ class App extends React.Component {
                   {item.grades.reduce((a, b) => a + parseInt(b), 0) /
                     item.grades.length}
                 </Card.Text>
+                <Collapsible title="+">
+                  <li>
+                    <ul>{item.grades}</ul>
+                  </li>
+                </Collapsible>
               </ol>
             </ListGroupItem>
           ))}
