@@ -2,7 +2,10 @@
 
 
 body {
-	
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	font-family: "Overpass", sans-serif;
 }
 
@@ -216,4 +219,5 @@ button:focus span:first-child {
 		width: calc(100vw - 32px);
 	}
 }
+
 
