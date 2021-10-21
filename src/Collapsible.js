@@ -4,7 +4,7 @@ export class Collapsible extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-
+      open: false,
     };
     this.togglePanel = this.togglePanel.bind(this);
   }
@@ -16,17 +16,11 @@ export class Collapsible extends React.Component {
   componentDidUpdate() {}
 
   render() {
-
     return (
       <div>
-        <button
-          type="submit"
-          onClick={(e) => this.togglePanel(e)}
-          className="collapsible"
-        >
-          <span></span>
-          <span></span>
-        </button>
+        <div onClick={(e) => this.togglePanel(e)} className="header">
+          {this.props.title}
+        </div>
         {this.state.open ? (
           <div className="content">{this.props.children}</div>
         ) : null}
@@ -34,6 +28,4 @@ export class Collapsible extends React.Component {
     );
   }
 }
-
-
 
