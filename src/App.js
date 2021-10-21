@@ -1,8 +1,8 @@
 import React from "react";
 import "./App.css";
-import {Collapsible} from "./Collapsible"
+import { Collapsible } from "./Collapsible";
 import Card from "react-bootstrap/Card";
-import { Tags } from "./TagsInput";
+// import { Tags } from "./Tags";
 import { ListGroupItem } from "react-bootstrap";
 
 class App extends React.Component {
@@ -15,7 +15,7 @@ class App extends React.Component {
       isLoaded: false,
       filter: "",
       min: 1,
-      max: 8,
+      max: 9,
     };
   }
 
@@ -37,7 +37,7 @@ class App extends React.Component {
   };
 
   render() {
-    const { isLoaded, items, filter} = this.state;
+    const { isLoaded, items, filter } = this.state;
 
     const lowercasedFilter = filter.toString().toLowerCase();
     const filteredData = items.filter((item) => {
@@ -46,17 +46,16 @@ class App extends React.Component {
       );
     });
 
-
     if (!isLoaded)
       return (
         <div>
           <h1> Please wait some time.... </h1>{" "}
         </div>
       );
-    
-    const selectedTags = (tags) => {
-      console.log(tags);
-    };
+
+    // const selectedTags = (tags) => {
+    //   console.log(tags);
+    // };
 
     return (
       <div className="App">
@@ -70,34 +69,36 @@ class App extends React.Component {
           />
 
           {filteredData.map((item) => (
-            <ListGroupItem>
+            <ListGroupItem className="studentList">
               <ol className="ol" key={item.id}>
                 <Card.Img className="img" src={item.pic} />
                 <Card.Text className="data text-muted">
-                  <Card.Title className="title text-dark">
-                    {item.firstName} {item.lastName}
-                  </Card.Title>
-                  Email: {item.email} <br></br>
-                  Company: {item.company} <br></br>
-                  Skills: {item.skill} <br></br>
-                  Average:{" "}
-                  {item.grades.reduce((a, b) => a + parseInt(b), 0) /
-                    item.grades.length}{" "}
-                  %<br></br>
+                  <div className="upperBox">
+                    <Card.Title className="title text-dark">
+                      {item.firstName} {item.lastName}
+                    </Card.Title>
+                    Email: {item.email} <br></br>
+                    Company: {item.company} <br></br>
+                    Skills: {item.skill} <br></br>
+                    Average:{" "}
+                    {item.grades.reduce((a, b) => a + parseInt(b), 0) /
+                      item.grades.length}{" "}
+                    %
+                  </div>
                   <Collapsible>
                     <div className="grades">
                       {item.grades.map((grade, i) => {
                         if (i >= this.state.min && i <= this.state.max) {
                           return (
                             <ul className="gradesList">
-                              test {i}: {grade} %
+                              <div>Test {i}:</div> <div>{grade} %</div>
                             </ul>
                           );
                         }
                       })}
                     </div>
                   </Collapsible>
-                  <Tags selectedTags={selectedTags} tags={[]} />
+                  {/* <Tags selectedTags={selectedTags} tags={[]} /> */}
                 </Card.Text>
               </ol>
             </ListGroupItem>

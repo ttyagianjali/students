@@ -3,9 +3,7 @@ import React from "react";
 export class Collapsible extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-
-    };
+    this.state = {};
     this.togglePanel = this.togglePanel.bind(this);
   }
 
@@ -16,7 +14,6 @@ export class Collapsible extends React.Component {
   componentDidUpdate() {}
 
   render() {
-
     return (
       <div>
         <button
@@ -34,6 +31,3 @@ export class Collapsible extends React.Component {
     );
   }
 }
-
-
-
