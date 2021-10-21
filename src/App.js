@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import {Collapsible} from "./Collapsible"
 import Card from "react-bootstrap/Card";
-import { Tags } from "./TagsInput";
+// import { Tags } from "./Tags";
 import { ListGroupItem } from "react-bootstrap";
 
 class App extends React.Component {
@@ -54,9 +54,9 @@ class App extends React.Component {
         </div>
       );
     
-    const selectedTags = (tags) => {
-      console.log(tags);
-    };
+    // const selectedTags = (tags) => {
+    //   console.log(tags);
+    // };
 
     return (
       <div className="App">
@@ -70,7 +70,7 @@ class App extends React.Component {
           />
 
           {filteredData.map((item) => (
-            <ListGroupItem>
+            <ListGroupItem className="studentList">
               <ol className="ol" key={item.id}>
                 <Card.Img className="img" src={item.pic} />
                 <Card.Text className="data text-muted">
@@ -97,7 +97,7 @@ class App extends React.Component {
                       })}
                     </div>
                   </Collapsible>
-                  <Tags selectedTags={selectedTags} tags={[]} />
+                  {/* <Tags selectedTags={selectedTags} tags={[]} /> */}
                 </Card.Text>
               </ol>
             </ListGroupItem>
