@@ -3,10 +3,7 @@ import "./App.css";
 import {Collapsible} from "./Collapsible"
 import Card from "react-bootstrap/Card";
 <<<<<<< HEAD
-<<<<<<< HEAD
 // import { Tags } from "./Tags";
-=======
->>>>>>> parent of 3f89aab... Revert "Revert "recent commit""
 =======
 >>>>>>> parent of 3f89aab... Revert "Revert "recent commit""
 import { ListGroupItem } from "react-bootstrap";
@@ -57,13 +54,10 @@ class App extends React.Component {
         </div>
       );
 <<<<<<< HEAD
-<<<<<<< HEAD
     
     // const selectedTags = (tags) => {
     //   console.log(tags);
     // };
-=======
->>>>>>> parent of 3f89aab... Revert "Revert "recent commit""
 =======
 >>>>>>> parent of 3f89aab... Revert "Revert "recent commit""
 
@@ -91,7 +85,6 @@ class App extends React.Component {
                   Average:{" "}
                   {item.grades.reduce((a, b) => a + parseInt(b), 0) /
 <<<<<<< HEAD
-<<<<<<< HEAD
                     item.grades.length}{" "}
                   %<br></br>
                   <Collapsible>
@@ -108,9 +101,6 @@ class App extends React.Component {
                     </div>
                   </Collapsible>
                   {/* <Tags selectedTags={selectedTags} tags={[]} /> */}
-=======
-                    item.grades.length}
->>>>>>> parent of 3f89aab... Revert "Revert "recent commit""
 =======
                     item.grades.length}
 >>>>>>> parent of 3f89aab... Revert "Revert "recent commit""
