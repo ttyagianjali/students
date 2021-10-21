@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import { Collapsible } from "./Collapsible";
 import Card from "react-bootstrap/Card";
-// import { Tags } from "./Tags";
+import { Tags } from "./Tags";
 import { ListGroupItem } from "react-bootstrap";
 
 class App extends React.Component {
@@ -40,6 +40,7 @@ class App extends React.Component {
     const { isLoaded, items, filter } = this.state;
 
     const lowercasedFilter = filter.toString().toLowerCase();
+
     const filteredData = items.filter((item) => {
       return Object.keys(item).some((key) =>
         item[key].toString().toLowerCase().includes(lowercasedFilter)
@@ -53,12 +54,10 @@ class App extends React.Component {
         </div>
       );
 
-    // const selectedTags = (tags) => {
-    //   console.log(tags);
-    // };
 
     return (
       <div className="App">
+        
         <Card className="students" style={{ width: "50rem" }}>
           <input
             className="searchBar"
@@ -72,9 +71,9 @@ class App extends React.Component {
             <ListGroupItem className="studentList">
               <ol className="ol" key={item.id}>
                 <Card.Img className="img" src={item.pic} />
-                <Card.Text className="data text-muted">
+                <Card.Text className="data text-dark">
                   <div className="upperBox">
-                    <Card.Title className="title text-dark">
+                    <Card.Title className="title">
                       {item.firstName} {item.lastName}
                     </Card.Title>
                     Email: {item.email} <br></br>
@@ -98,7 +97,7 @@ class App extends React.Component {
                       })}
                     </div>
                   </Collapsible>
-                  {/* <Tags selectedTags={selectedTags} tags={[]} /> */}
+                  <Tags />
                 </Card.Text>
               </ol>
             </ListGroupItem>
