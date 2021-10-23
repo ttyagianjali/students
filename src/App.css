@@ -94,37 +94,58 @@
   font-weight: bolder;
 }
 
-menu-btn {
-  position: absolute;
-  z-index: 1;
-  right: 1rem;
-  top: 1rem;
-  height: 20px;
-  width: 28px;
-}
-menu-btn_burger {
-  position: absolute;
-  right: 30px;
-  top: 2rem;
-  width: 28px;
-  height: 3px;
-  background-color: white;
-}
-menu-btn_burger::before {
-  content: '';
-  position: absolute;
-  top: -12px;
-  width: 3px;
-  height: 28px;
-  right: 12px;
-  background-color: white;
-}
-menu-btn_burger.open {
-  transform: rotate(-90deg);
+button {
+  color: #ecf0f1;
   background: white;
+  width: 50px;
+  height: 50px;
+  border: 0;
+  font-size: 1.5em;
+  position: relative;
+  
+}
+
+button span {
+  position: absolute;
+  transition: 300ms;
+  background: gray;
+  border-radius: 2px;
+}
+
+/* Create the "+" shape by positioning the spans absolutely */
+button span:first-child {
+  top: 25%;
+  bottom: 25%;
+  width: 10%;
+  left: 45%;
+}
+
+button span:last-child {
+  left: 25%;
+  right: 25%;
+  height: 10%;
+  top: 45%;
+}
+
+/* Morph the shape when the button is hovered over */
+button:focus span {
+  transform: rotate(90deg);
 }
 
 
+
+/* button:focus span:last-child {
+  left: 50%;
+  right: 50%;
+  
+  transform: rotate(-90deg);
+  }
+
+button:focus span:first-child {
+  left: 50%;
+  right: 50%;
+  
+}   */
 
 .input-tag {
   background: white;

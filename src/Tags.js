@@ -31,8 +31,7 @@ export class Tags extends React.Component {
   };
 
   render() {
-    const{tags} = this.state
-    let tag = this.props.tag;
+    const { tags } = this.state;
 
     return (
       <div className="input-tag">
