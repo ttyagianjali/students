@@ -4,6 +4,7 @@ import { Collapsible } from "./Collapsible";
 import Card from "react-bootstrap/Card";
 import { Tags } from "./Tags";
 import { ListGroupItem } from "react-bootstrap";
+import { TagSearch } from './TagSearch';
 
 class App extends React.Component {
   // Constructor
@@ -54,10 +55,8 @@ class App extends React.Component {
         </div>
       );
 
-
     return (
       <div className="App">
-        
         <Card className="students" style={{ width: "50rem" }}>
           <input
             className="searchBar"
@@ -66,10 +65,13 @@ class App extends React.Component {
             onChange={this.handleChange}
             placeholder="Search by name"
           />
-
+        <TagSearch/>
           {filteredData.map((item) => (
             <ListGroupItem className="studentList">
-              <ol className="ol" key={item.id}>
+              <ol
+                className="ol"
+                key={item.id}
+              >
                 <Card.Img className="img" src={item.pic} />
                 <Card.Text className="data text-dark">
                   <div className="upperBox">
