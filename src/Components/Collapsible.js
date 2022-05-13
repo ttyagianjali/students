@@ -3,15 +3,14 @@ import React from "react";
 export class Collapsible extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+    };
     this.togglePanel = this.togglePanel.bind(this);
   }
 
   togglePanel(e) {
     this.setState({ open: !this.state.open });
   }
-
-  componentDidUpdate() {}
 
   render() {
     return (
@@ -28,6 +27,7 @@ export class Collapsible extends React.Component {
           <div className="content">{this.props.children}</div>
         ) : null}
       </div>
+      
     );
   }
 }

@@ -49,7 +49,7 @@
 .searchBar {
   border: none;
   border-bottom: 1px solid black;
-  width: 96%;
+  width: 100%;
   font-size: 20px;
   padding: 3px;
   font-weight: lighter;
@@ -107,7 +107,6 @@ button {
 
 button span {
   position: absolute;
-  transition: 300ms;
   background: gray;
   border-radius: 2px;
 }
@@ -127,10 +126,11 @@ button span:last-child {
   top: 45%;
 }
 
+
 /* Morph the shape when the button is hovered over */
-button:focus span {
+/* button:focus span {
   transform: rotate(90deg);
-}
+} */
 
 
 

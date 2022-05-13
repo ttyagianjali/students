@@ -57,7 +57,6 @@ class App extends React.Component {
 
     return (
       <div className="App">
-        
         <Card className="students" style={{ width: "50rem" }}>
           <input
             className="searchBar"
@@ -89,7 +88,7 @@ class App extends React.Component {
                       {item.grades.map((grade, i) => {
                         if (i >= this.state.min && i <= this.state.max) {
                           return (
-                            <ul className="gradesList">
+                            <ul className="gradesList" key={grade.id}>
                               <div>Test {i}:</div> <div>{grade} %</div>
                             </ul>
                           );
